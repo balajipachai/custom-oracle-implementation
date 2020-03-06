@@ -27,14 +27,13 @@ describe('HelloWorld', () => {
     const timestamp = Date.now();
     it('should change message to How are you, World?', async () => {
       receipt = await contractInstance.changeMessage('How are you, World?', timestamp, { from: coinbase });
-      console.log('Transaction receipt: ', receipt);
     });
 
     it('emits a LogMessageChanged event on successful changed message', async () => {
       expectEvent(receipt, 'LogMessageChanged', {
         oldMessage: 'Hello, World !!!',
         newMessage: 'How are you, World?',
-        timestamp,
+        timestamp: new BN(timestamp),
       });
     });
   });

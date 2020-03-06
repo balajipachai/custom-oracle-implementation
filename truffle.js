@@ -18,8 +18,8 @@ module.exports = {
       protocol: 'http',
       host: 'localhost',
       port: 8545,
-      network_id: '7777',
-      gas: 8000000,
+      network_id: '85',
+      gas: 4718380,
       gasPrice: 1,
     },
     mainnet: {
@@ -75,9 +75,9 @@ module.exports = {
     useColors: true,
     reporter: 'eth-gas-reporter',
     reporterOptions: {
-      outputFile: './ethGasReport',
+      outputFile: null,
       showTimeSpent: true,
-      excludeContracts: ['Migrations', 'HelloWorld'],
+      excludeContracts: [],
       src: 'contracts',
       url: 'http://127.0.0.1:8545',
       showMethodSig: true,

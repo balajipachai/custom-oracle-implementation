@@ -1,6 +1,9 @@
 #Ignore the build directory
 build
 
+#Editors
+.vscode
+
 # Logs
 logs
 *.log
