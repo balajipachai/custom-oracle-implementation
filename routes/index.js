@@ -2,17 +2,27 @@ const express = require('express');
 
 const router = express.Router();
 
+const bodyParser = require('body-parser');
+
+const jsonParser = bodyParser.json();
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+
 const controller = require('../controller/');
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Home' });
+});
+
+router.get('/helloworld', (req, res) => {
+  res.render('helloWorld', { title: 'HelloWorld' });
 });
 
 /**
  * API to ChangeMessage in HelloWorld Contract
  */
-router.post('/helloworld/change/message', async (req, res) => {
+router.post('/helloworld/change/message', urlencodedParser, async (req, res) => {
   try {
     const result = await controller.helloWorldChangeMessage(req.body);
     res.json({
@@ -96,7 +106,7 @@ router
         data: [],
       });
     }
-  })
+  });
 
 
 module.exports = router;
