@@ -4,8 +4,11 @@ const sendServer = async () => {
   };
   const response = await fetch('http://localhost:8080/helloworld/change/message', {
     method: 'POST',
-    body: dataToSend,
+    body: JSON.stringify(dataToSend),
+    headers: {
+      'Content-Type': 'application/json',
+    },
   });
   console.log('server response: ', response);
-  alert('Name changed successfully');
+  alert('Message changed successfully');
 };
