@@ -2,12 +2,6 @@ const express = require('express');
 
 const router = express.Router();
 
-const bodyParser = require('body-parser');
-
-const jsonParser = bodyParser.json();
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
-
-
 const controller = require('../controller/');
 
 /* GET home page. */
@@ -22,7 +16,7 @@ router.get('/helloworld', (req, res) => {
 /**
  * API to ChangeMessage in HelloWorld Contract
  */
-router.post('/helloworld/change/message', urlencodedParser, async (req, res) => {
+router.post('/helloworld/change/message', async (req, res) => {
   try {
     const result = await controller.helloWorldChangeMessage(req.body);
     res.json({
@@ -46,9 +40,11 @@ router
   .get('/helloworld/message', async (req, res) => {
     try {
       const result = await controller.helloWorldGetCurrentMessage();
-      res.json({
+      res.render('result', {
+        title: 'Current Message',
         status: 'success',
-        message: 'Current message',
+        flag: false,
+        message: 'Current message in the HelloWorld contract is:',
         data: [result],
       });
     } catch (e) {
@@ -62,9 +58,11 @@ router
   .get('/helloworld/greeted/to', async (req, res) => {
     try {
       const result = await controller.helloWorldGetGreetedHelloTo();
-      res.json({
+      res.render('result', {
+        title: 'Greeted Hello',
         status: 'success',
-        message: 'Greeted hello to',
+        flag: false,
+        message: 'Greeted hello to:',
         data: [result],
       });
     } catch (e) {
@@ -78,9 +76,11 @@ router
   .get('/helloworld/owner', async (req, res) => {
     try {
       const result = await controller.helloWorldGetContractOwner();
-      res.json({
+      res.render('result', {
+        title: 'Contract Owner',
         status: 'success',
-        message: 'Contract owner',
+        flag: false,
+        message: 'Address of contract owner is:',
         data: [result],
       });
     } catch (e) {
@@ -94,10 +94,14 @@ router
   .get('/helloworld/all/events', async (req, res) => {
     try {
       const result = await controller.helloWorldGetAllEvents();
-      res.json({
+      // console.log('result of all events: ', result);
+      const sortedResult = result.sort((obj1, obj2) => obj1.blockNumber - obj2.blockNumber);
+      res.render('result', {
+        title: 'All Events',
         status: 'success',
-        message: 'All events',
-        data: result,
+        flag: true,
+        message: 'All emitted events are:',
+        data: sortedResult,
       });
     } catch (e) {
       res.json({
