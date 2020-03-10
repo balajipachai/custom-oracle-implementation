@@ -8,6 +8,7 @@ const callChangeMessage = async (params) => {
     const contractInstance = utils.initialSetup(HelloWorldContract);
     const { message } = params;
     const timestamp = Date.now();
+    await utils.unlockAccount(process.env.OWNER);
     const receipt = await contractInstance.methods.changeMessage(
       message,
       timestamp,
@@ -64,9 +65,9 @@ const getAllEvents = async () => {
           blockHash: event.blockHash,
           blockNumber: event.blockNumber,
           transactionHash: event.transactionHash,
-          oldMessage: event.returnValues.oldMessage,
-          newMessage: event.returnValues.newMessage,
-          timestamp: event.returnValues.timestamp,
+          oldValue: event.returnValues.oldMessage,
+          newValue: event.returnValues.newMessage,
+          timestamp: new Date(Number.parseInt(event.returnValues.timestamp, 10)).toLocaleString(),
         });
       });
     });
@@ -78,9 +79,9 @@ const getAllEvents = async () => {
           blockHash: event.blockHash,
           blockNumber: event.blockNumber,
           transactionHash: event.transactionHash,
-          oldName: event.returnValues.oldName,
-          newName: event.returnValues.newName,
-          timestamp: event.returnValues.timestamp,
+          oldValue: event.returnValues.oldName,
+          newValue: event.returnValues.newName,
+          timestamp: new Date(Number.parseInt(event.returnValues.timestamp, 10)).toLocaleString(),
         });
       });
     });
