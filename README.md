@@ -259,5 +259,22 @@ This repository specifies how an oracle can be implemented in case of getting of
         }
         ```
 
+
+# Screenshots
+- Home Page
+    
+    ![HomePage](public/images/HW1.png)
+
+- Current Message
+    
+    ![CurrentMessage](public/imgaes/HW2.png)
+
+- Current Greeted To
+    
+    ![CurrentGreetedTo](public/imgaes/HW3.png)
+
+- All Events
+    
+    ![AllEvents](public/imgaes/HW4.png)
 # Note
 Feedbacks, suggestinons, constructive criticism, scope for improvement are most welcome.
