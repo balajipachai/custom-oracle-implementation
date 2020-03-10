@@ -1,14 +1,30 @@
 <script src="/javascripts/index.js"></script>
 <link rel="stylesheet" href="/stylesheets/style.css">
 <div id="formDiv">
-    <form role="form" id="inputForm">
-  <label for="message">Message:</label><br>
-  <br>
-  <input type="text" id="message" name="message" placeholder="Enter the message..."><br>
-  <br>
-  <div class="box-footer">
+  <form role="form" id="inputForm">
+    <div class="form-group">
+      <label for="exampleMessage">Message</label>
+      <input type="text" class="form-control" id="message" aria-describedby="messageHelp">
+      <small id="messageHelp" class="form-text text-muted">Message that should be stored onto blockchain.</small>
+    </div>
+    <div class="box-footer">
       <button type="button" id="btnSubmit" class="btn btn-primary" onclick="sendServer()">Submit</button>
-  </div>
-</form>
+    </div>
+  </form>
 </div>
- 
+
+<div id="nav-links">
+  <br>
+  <div class="alert alert-primary" role="alert">
+    <a href="http://localhost:8080/helloworld/message" class="alert-link" target="_blank">Get Current Message</a>
+  </div>
+  <div class="alert alert-primary" role="alert">
+    <a href="http://localhost:8080/helloworld/greeted/to" class="alert-link" target="_blank">Get Greeted To</a>
+  </div>
+  <div class="alert alert-primary" role="alert">
+    <a href="http://localhost:8080/helloworld/owner" class="alert-link" target="_blank">Get Contract Owner</a>
+  </div>
+  <div class="alert alert-primary" role="alert">
+    <a href="http://localhost:8080/helloworld/all/events" class="alert-link" target="_blank">Get All Events</a>
+  </div>
+</div>
