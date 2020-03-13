@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "test-app": "will be added",
+    "test-apis": "jest ./test/apis/",
     "clean": "rm -rf .config .npm .node-gyp node_modules && npm install",
     "cleanSol": "rm -rf build/contracts",
     "compile": "clear && truffle compile && npm run lint",
@@ -48,11 +48,13 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-detailed-reporter": "^0.8.0",
     "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-mocha": "^6.3.0",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-security": "^1.4.0",
     "eth-gas-reporter": "^0.2.15",
     "husky": "^4.2.3",
+    "jest": "^25.1.0",
     "mocha": "^5.2.0",
     "nodemon": "^2.0.2",
     "solidity-coverage": "^0.7.1"
