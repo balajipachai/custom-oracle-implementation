@@ -22,6 +22,14 @@ const getEthAccounts = async () => {
 };
 
 /**
+ * Unlock account
+ */
+const unlockAccount = async (account) => {
+  await web3.eth.personal.unlockAccount(account, 'password', 15);
+  return true;
+};
+
+/**
  * Function that gets the web3 instance
  */
 const getWeb3 = () => web3;
@@ -104,4 +112,5 @@ module.exports = {
   getContractFromJSON,
   initialSetup,
   setWatchOnEvents,
+  unlockAccount,
 };

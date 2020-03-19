@@ -259,5 +259,22 @@ This repository specifies how an oracle can be implemented in case of getting of
         }
         ```
 
+
+# Screenshots
+- Home Page
+    
+    ![HomePage](https://github.com/balajipachai/custom-oracle-implementation/blob/development/public/images/HW1.png)
+
+- Current Message
+    
+    ![CurrentMessage](https://github.com/balajipachai/custom-oracle-implementation/blob/development/public/images/HW2.png)
+
+- Current Greeted To
+    
+    ![CurrentGreetedTo](https://github.com/balajipachai/custom-oracle-implementation/blob/development/public/images/HW3.png)
+
+- All Events
+    
+    ![AllEvents](https://github.com/balajipachai/custom-oracle-implementation/blob/development/public/images/HW4.png)
 # Note
 Feedbacks, suggestinons, constructive criticism, scope for improvement are most welcome.

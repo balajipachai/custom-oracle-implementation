@@ -1,0 +1,39 @@
+<div id="resultDiv">
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-5">{{ message }}</h1>
+        <br>
+        {{#if flag}}
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Event</th>
+                    <th scope="col">Block Hash</th>
+                    <th scope="col">Block No</th>
+                    <th scope="col">Tx Hash</th>
+                    <th scope="col">Old Value</th>
+                    <th scope="col">New Value</th>
+                    <th scope="col">Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.event}}</td>
+                    <td class="col-2 text-truncate">{{this.blockHash}}</td>
+                    <td>{{this.blockNumber}}</td>
+                    <td>{{this.transactionHash}}</td>
+                    <td>{{this.oldValue}}</td>
+                    <td>{{this.newValue}}</td>
+                    <td>{{this.timestamp}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{else}}
+        <h1 class="text-center text-success font-weight-bold">{{ data }}</h1>
+        {{/if}}
+    </div>
+    {{> footer}}
+</div>

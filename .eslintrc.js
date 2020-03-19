@@ -5,6 +5,7 @@ module.exports = {
     es6: true,
     node: true,
     mocha: true,
+    "jest/globals": true
   },
   extends: [
     'airbnb-base',
@@ -13,6 +14,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  plugins: ['jest'],
   parserOptions: {
     ecmaVersion: 2018,
   },
