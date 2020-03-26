@@ -30,6 +30,7 @@
     "fix": "0.0.6",
     "morgan": "~1.9.1",
     "openzeppelin-solidity": "^2.5.0",
+    "service-runner": "^2.7.6",
     "solhint": "^3.0.0-rc.5",
     "truffle-contract": "^4.0.31",
     "truffle-flattener": "^1.4.2",
